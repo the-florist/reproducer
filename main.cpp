@@ -59,7 +59,12 @@ int main(int argc, char* argv[])
     std::string filename = "./mode-function";
     Vector<std::string> field_names{"plus", "cross"};
 
-    WriteSingleLevelPlotfileHDF5(filename, hs_x, field_names);
+    RealBox real_box({ AMREX_D_DECL(0, 0, 0)},
+                     { AMREX_D_DECL(1, 1, 1)} );
+    Array<int,AMREX_SPACEDIM> is_periodic{AMREX_D_DECL(1,1,1)};
+    Geometry geom(x_domain, real_box, CoordSys::cartesian, is_periodic);
+
+    amrex::WriteSingleLevelPlotfile("plot", hs_x, field_names, geom, 0., 0);
 
     } amrex::Finalize();
 }

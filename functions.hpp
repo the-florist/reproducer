@@ -6,7 +6,7 @@
 #include <AMReX_Print.H>
 #include <AMReX_FFT.H>
 #include <AMReX_Vector.H>
-#include <AMReX_PlotFileUtilHDF5.H>
+#include <AMReX_PlotFileUtil.H>
 
 using namespace amrex;
 
