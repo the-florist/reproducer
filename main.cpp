@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
     std::string filename = "./mode-function";
     Vector<std::string> field_names{"plus", "cross"};
 
-    //WriteSingleLevelPlotfileHDF5(filename, hs_x, field_names);
+    WriteSingleLevelPlotfileHDF5(filename, hs_x, field_names);
 
     } amrex::Finalize();
 }
